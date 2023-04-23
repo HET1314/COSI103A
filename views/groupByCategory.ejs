@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Transactions for <%= user.username %></h1>
+    <p>Here is your list of transactions!</p>
+
+    <ul>
+        <li><a href="/transaction">transaction table</a></li>
+    </ul>
+
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>category</th>
+                <th>amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% transactions.forEach(transaction=> { %>
+                <tr>
+                    <td>
+                        <%= transaction._id %>
+                    </td>
+                    <td>
+                        <%= transaction.amount.toFixed(2) %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
